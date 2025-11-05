@@ -9,7 +9,7 @@ public class ProductsPage {
     WebDriver driver;
     LoginPage loginPage;
     public By firstProduct = By.xpath("(//a[contains(text(),'Add to cart')])[1]");
-    public By productAdded = By.xpath("(//p[contains(text(),'Your product has been added to cart.'])");
+    public By productAdded = By.xpath("(//div[@class='modal-content']//p[1])");
 
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
