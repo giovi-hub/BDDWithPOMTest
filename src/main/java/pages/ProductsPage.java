@@ -1,9 +1,8 @@
-package CartExample.ui.pages;
+package pages;
 
-import CartExample.ui.components.SideMenu;
-import CartExample.ui.components.TopMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.LoginPage;
 
 public class ProductsPage {
     WebDriver driver;

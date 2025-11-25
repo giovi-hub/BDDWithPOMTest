@@ -1,4 +1,4 @@
-package CartExample.ui.utils;
+package CartExample.utils;
 
 import org.openqa.selenium.WebDriver;
 

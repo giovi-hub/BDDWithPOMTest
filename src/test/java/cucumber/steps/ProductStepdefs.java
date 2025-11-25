@@ -1,7 +1,7 @@
 package cucumber.steps;
 
-import CartExample.ui.pages.LoginPage;
-import CartExample.ui.pages.ProductsPage;
+import pages.LoginPage;
+import pages.ProductsPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

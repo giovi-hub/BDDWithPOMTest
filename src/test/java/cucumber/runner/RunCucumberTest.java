@@ -1,11 +1,12 @@
 package cucumber.runner;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-import org.testng.annotations.BeforeSuite;
 
-@RunWith(Cucumber.class)
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+
+@RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-report.html"},
         glue = {"steps"},
