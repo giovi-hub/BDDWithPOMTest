@@ -19,33 +19,26 @@ public class LoginScenariosPage extends PageObject {
     @FindBy(xpath = "//p[contains(text(),'Your email or password is incorrect!')]")
     WebElementFacade errorMessage;
 
+
     public void openPage(){
-        openUrl("https://www.automationexercise.com");
+        openUrl("https://www.automationexercise.com/login");
 
     }
     public void loginUser(final String userEmail, final String password){
         loginLink.waitUntilClickable().click();
+        usernameField.clear();
         usernameField.type(userEmail);
+        passwordField.clear();
         passwordField.type(password);
         loginButton.click();
     }
-    public String getLoginMessage(){
-        try {
-            if (errorMessage != null && errorMessage.isVisible()) {
-                errorMessage.waitUntilVisible();
-                return errorMessage.getText();
-            } else if (loggedUser != null && loggedUser.isVisible()) {
-                loggedUser.waitUntilVisible();
-                return loggedUser.getText();
-            } else {
-                return "No message found";
-            }
-        } catch (Exception e) {
-            System.out.println("Error al obtener el mensaje: " + e.getMessage());
-            return "Error retrieving message";
-        }
-
-    }
-
-
+   public String getLoginMessage(){
+       if (errorMessage.isPresent() && errorMessage.isVisible()){
+           errorMessage.waitUntilVisible();
+           return errorMessage.getText();
+       } else if (loggedUser.isPresent() && loggedUser.isVisible()) {
+           return loggedUser.getText();
+       }
+       return "";
+   }
 }

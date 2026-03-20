@@ -19,9 +19,9 @@ public class PurchasePage extends PageObject {
     WebElementFacade productLink;
     @FindBy(css = "div.modal-content")
     WebElementFacade modal;
-    @FindBy(xpath = "(//a[contains(@class,'add-to-cart')])[1]")
+    @FindBy()
     WebElementFacade addToCartButton;
-    @FindBy(css = "div.modal-content a[href='/view_cart']")
+    @FindBy(css = "div.modal-contexpath = \"(//a[contains(@class,'add-to-cart')])[1]\"nt a[href='/view_cart']")
     WebElementFacade viewCartLink;
     @FindBy(css = "a[class='btn btn-default check_out']")
     WebElementFacade checkoutButton;

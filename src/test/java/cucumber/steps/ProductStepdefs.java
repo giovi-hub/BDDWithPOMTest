@@ -19,7 +19,7 @@ public class ProductStepdefs {
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
-        loginPage.loginSucceful("got.test.06@gmail.com", "Password@1");
+        loginPage.insertCredentials("got.test.06@gmail.com", "Password@1");
     }
 
     @When("I add the first product to the cart")

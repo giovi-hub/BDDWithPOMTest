@@ -11,7 +11,6 @@ public class LoginPage {
     By passwordField = By.xpath("//input[@data-qa='login-password']");
     By loginButton = By.xpath("//button[@data-qa='login-button']");
     By loggedUserName = By.xpath("//a[contains(text(),'Logged in as')]");
-
     By messageError = By.xpath("//p[contains(text(),'Your email or password is incorrect!')]");
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -20,7 +19,7 @@ public class LoginPage {
         driver.get("https://www.automationexercise.com");
         driver.findElement(loginLink).click();
     }
-    public void loginSucceful(final String userEmail, final String password){
+    public void insertCredentials(final String userEmail, final String password){
         setUserEmail(userEmail);
         setPassword(password);
         clickLoginButton();
