@@ -31,6 +31,7 @@ public class LoginScenariosPage extends PageObject {
         passwordField.clear();
         passwordField.type(password);
         loginButton.click();
+
     }
    public String getLoginMessage(){
        if (errorMessage.isPresent() && errorMessage.isVisible()){

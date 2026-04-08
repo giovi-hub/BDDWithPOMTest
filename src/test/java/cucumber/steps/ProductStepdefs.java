@@ -1,6 +1,8 @@
 package cucumber.steps;
 
+import net.serenitybdd.annotations.Steps;
 import pages.LoginPage;
+import pages.LoginScenariosPage;
 import pages.ProductsPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,23 +13,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.Assert.assertTrue;
 
 public class ProductStepdefs {
-    WebDriver driver;
-    LoginPage loginPage;
+    @Steps
     ProductsPage productPage;
     @Given("I am on the home page")
     public void iAmOnTheHomePage() {
-        driver = new ChromeDriver();
-        loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
-        loginPage.insertCredentials("got.test.06@gmail.com", "Password@1");
+        productPage.openHomePage();
     }
-
     @When("I add the first product to the cart")
     public void iAddTheFirstProductToTheCart() {
-        productPage = new  ProductsPage(driver);
+        System.out.println("when");
         productPage.addFirstProduct();
     }
-
     @Then("I should see the message {string}")
     public void iShouldSeeTheMessage(String expectedText) {
         String actualText = productPage.productMessage();

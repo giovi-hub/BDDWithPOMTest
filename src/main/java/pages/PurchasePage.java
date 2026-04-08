@@ -7,6 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import java.util.concurrent.TimeUnit;
 
 public class PurchasePage extends PageObject {
+    //Login
     @FindBy(xpath = "//a[contains(text(),' Signup / Login')]")
     WebElementFacade loginLink;
     @FindBy(xpath = "//input[@data-qa='login-email']")
@@ -15,18 +16,21 @@ public class PurchasePage extends PageObject {
     WebElementFacade passwordField;
     @FindBy(xpath = "//button[@data-qa='login-button']")
     WebElementFacade loginButton;
+    //Product
     @FindBy(css = "a[href='/products']")
     WebElementFacade productLink;
     @FindBy(css = "div.modal-content")
     WebElementFacade modal;
-    @FindBy()
+    @FindBy(xpath = "(//a[contains(text(),'Add to cart')])[1]")
     WebElementFacade addToCartButton;
-    @FindBy(css = "div.modal-contexpath = \"(//a[contains(@class,'add-to-cart')])[1]\"nt a[href='/view_cart']")
+    @FindBy(css = ".modal-body a[href='/view_cart']")
     WebElementFacade viewCartLink;
+    //Checkout
     @FindBy(css = "a[class='btn btn-default check_out']")
     WebElementFacade checkoutButton;
     @FindBy(css = "textarea[name='message']")
     WebElementFacade commentText;
+    //Payment
     @FindBy(css = "a[href='/payment']")
     WebElementFacade placeOrderButton;
     @FindBy(css = "input[name='name_on_card']")
@@ -56,7 +60,7 @@ public class PurchasePage extends PageObject {
         loginButton.click();
     }
     public void addProductToCart(){
-        productLink.click();
+       // productLink.waitUntilClickable().click();
         addToCartButton.waitUntilClickable().click();
         withTimeoutOf(10, TimeUnit.SECONDS).waitFor(modal).isVisible();
         viewCartLink.waitUntilClickable().click();
